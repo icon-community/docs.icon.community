@@ -1,0 +1,52 @@
+---
+description: A cross-chain messaging interface deployable on any protocol
+---
+
+import ChainStatusComponent from '../../components/chainstatuscomponent'
+import Link from 'next/link'
+
+
+# What is ICON's General Message Passing (xCall)?
+
+xCall is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols.&#x20;
+
+### Check out xCall availability on the following networks
+<ChainStatusComponent />
+<Link className="bg-xteal/40 px-4 py-2 rounded text-sm font-semibold" href='active-development'>Jump to full Integrations Overview</Link>
+## Why Use xCall?&#x20;
+
+Our intention with xCall was to make it as easy as possible for developers to extend the reach of their dApps across multiple ecosystems from the comfort of their preferred chains.&#x20;
+
+Here are some key features that make xCall a powerful tool for building cross-chain applications: &#x20;
+
+* **Seamless Connectivity**: xCall simplifies the process of calling contracts to destination chains from source chains by using a single standard across all protocols
+* **Extensibility:** xCall is a lightweight contract that can extend across any protocol and we will expand support for additional cross-chain message protocols as they emerge
+* **Growing Utility**: xCall integrates all the latest advancements in cross-chain messaging solutions, increasing the versatility and utility of xCall for developers
+* **Composable Verification:** xCall adds an extra layer of security through multiple protocol-verification&#x20;
+
+## Which Chains are Connected to xCall?
+Currently, xCall supports the Blockchain Transmission Protocol (BTP) and IBC. The IBC integration connects through smart contracts and its implementation details can be found here. Chains supported by BTP are ICON, Havah, Ethereum, and Binance Smart Chain. Chains supported by IBC are ICON and Archway.
+
+As additional cross-chain message protocols come online, developers will be able to access them with the same entry point, the xCall interface.
+
+## Getting started
+
+Here are some quick guides to get you started.
+
+## Build a Cross-Chain DApp
+
+Start by learning [how to send a cross-chain message](/cross-chain-communication/general-message-passing-xcall/quickstart/sending-a-message).
+
+## Examples
+
+Take a look some example dApps that were created using xCall for inspiration.
+
+* [A message sender dApp](https://github.com/icon-project/xcall-multi-jvm-jvm-demo/tree/master)
+
+## Help and Support
+
+If you run into issues, join the [ICON Discord](https://icon.community/icondiscord/) to get support from builders on ICON.
+
+## Learn More
+
+For general information and concepts, proceed to [Explanations](/cross-chain-communication/general-message-passing-xcall/explanations).

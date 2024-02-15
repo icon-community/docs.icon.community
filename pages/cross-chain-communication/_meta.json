@@ -1,0 +1,30 @@
+{
+    "general-message-passing-xcall": {
+        "title": "General Message Passing (xCall)",
+        "theme": {
+            "layout": "default",
+            "breadcrumb": false
+        }
+    },
+    "blockchain-transmission-protocol-btp": {
+        "title": "Blockchain Transmission Protocol (BTP)",
+        "theme": {
+            "layout": "default",
+            "breadcrumb": false
+        }
+    },
+    "icon-bridge": {
+        "title": "ICON Bridge",
+        "theme": {
+            "layout": "default",
+            "breadcrumb": false
+        }
+    },
+    "active-development": {
+        "title": "Active Development",
+        "theme": {
+            "layout": "default",
+            "breadcrumb": false
+        }
+    }
+}

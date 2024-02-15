@@ -1,0 +1,51 @@
+{
+  "welcome": {
+    "title": "Welcome",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  },
+  "index": {
+    "title": "Home",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "cross-chain-communication": {
+    "title": "Cross-chain Communication",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  },
+  "develop-on-icon-chain": {
+    "title": "Develop on ICON Chain",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  },
+  "operate-icon": {
+    "title": "Operate ICON",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  },
+  "advanced-topics": {
+    "title": "Advanced Topics",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
+  }
+}

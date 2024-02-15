@@ -1,0 +1,72 @@
+import { Callout } from "nextra/components";
+import Tile from "../components/tile"
+
+# Welcome to ICON
+
+<Callout type="warning">
+  Visit <a className="inline-block font-semibold" href="https://icon.community/">icon.community</a> for the latest news and updates on the ICON network.
+</Callout>
+
+![A comparison chart showcasing the differences between ICON Bridge and BTP.](/images/icon-framework.jpg "A comparison chart showcasing the differences between ICON Bridge and BTP.")
+
+<div className="grid grid-cols-2 pt-12">
+  <Tile
+    title="Cross-chain communication"
+    description=""
+    href="/cross-chain-communication"
+  />
+  <Tile
+    title="Develop on ICON Chain"
+    description=""
+    href="/develop-on-icon-chain"
+  />
+  <Tile
+    title="Operate ICON"
+    description=""
+    href="/operate-icon"
+  />
+  <Tile
+    title="Advanced Topics"
+    description=""
+    href="/advanced-topics"
+  />
+</div>
+
+## Introduction
+Founded in August 2017, ICON has spent many years fostering its L1 ecosystem and pushing for sustainable cross-chain development infrastructure. As many apps experience cross-chain difficulties today, ICON recognizes the frustration regarding the complexity involved with security, scaling and speed in cross-chain environments. What does ICON and its Cross-Chain Framework offer to applications looking to leverage the benefits of additional chains?
+
+Apps use ICON to operate cross-chain seamlessly, build momentum and gain a solid reputation. ICON's Cross-Chain Framework helps to simplify cross-chain development with the easy-to-use ICON General Message Passing (xCall) and connections to secure bridging protocols.
+
+<Callout type="info" emoji="💡">
+  ICON is an interoperability layer that helps teams and developers build successful cross-chain apps.
+</Callout>
+
+## ICON's Cross-Chain Framework
+The ICON Cross-Chain Framework consists of a robust L1 blockchain, ICON General Message Passing (xCall) and a growing list of connected blockchains and integrated bridging protocols. Improved interoperability through this aggregation of bridging protocols allows apps to transform from isolated and ineffective to well-connected and essential. Avoiding both a declining user base and long development integration timelines. Apps, written in any programming language, can use the ICON Cross-Chain Framework to access the diverse features and user base of a broad community of blockchains.
+
+## The ICON Blockchain and ICX
+With the ICON blockchain's integration of both IBC and BTP interoperability protocols, it is positioned as a potential application hub for the growing ICON GMP ecosystem. Additionally, ICON's native ICX coin fuels this interoperability by acting as the L1 gas token, ICON GMP's cross-chain fee token and trading fee token with associated applications. A sizable percentage of all these fees are collected in ICX and are burned. Where ICON GMP is used from an external application hub (say ETH) or via an adapted protocol (such as Wormhole) that doesn't integrate directly with ICON, fees are still collected in a native coin and are used to buy back and burn ICX.
+
+## ICON General Message Passing (xCall)
+ICON GMP is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols. This tooling is not an interoperability solution or an interoperability protocol, it is a messaging standard that serves as a comprehensive wrapper over various low-level cross-chain communication protocols. This offers developers a single interface, enabling them to focus more on building and less on the nuances of each blockchain or protocol integration. 
+
+Through ICON GMP, applications can send data seamlessly across IBC, BTP, Wormhole and Layerzero with one interface.
+
+Example - In describing ICON GMP as having one interface, we are referring to developers' requirement to write code to interact with different interoperable protocols. Developers build their product to interface with a given protocol. Should that protocol then be compromised then the work would need to be repeated to return to service. Through ICON GMP, one interface can aggregate several potential protocols and prevent loss of service.
+
+### Multi Protocol Verification
+Security is of great concern in the interoperability space, with bridges being a common target to bad actors. ICON GMP addresses this matter foremost by leveraging the security of its underlying interoperability protocols, of which all connected protocols now utilize light client technology to ensure on-chain verification and trustless transfer of messages.
+
+Additionally, ICON GMP offers Multi Protocol Verification for implementations that wish to access further assurances for their transactions. This allows a message to be sent over additional protocols, aggregating the results of messages sent to provide a layer of redundancy for the transaction and ensuring its delivery to the destination.
+
+Example - Say your application is built to communicate across a single protocol, but through a bad actor this route becomes compromised. This situation could put user funds at risk. By leveraging ICON GMP's Multi Protocol Verification, messages would have their security backed up with a second protocol. In this case any deviation from the expected behavior of one message can trigger rollback, or allow a malicious connection to be disregarded.
+
+### The Central Relay
+While ICON GMP gives a diverse range of options to applications looking to begin their cross-chain expansion, some users may have a very specific use case in mind. For this situation there is the option of the Central Relay. By using our Central Relay option, teams can quickly open a channel to their desired chain with whichever custom GMP that they require.
+
+## Getting to grips with ICON's Cross-Chain Framework
+The ICON community is working to produce a frictionless and well featured cross-chain experience for the benefit of the blockchain community. For those looking to begin exploring cross-chain with ICON, Hana's cross-chain wallet simplifies user interactions with various blockchains through a single interface. You can also conduct your first transaction with ICON GMP today through ICON's flagship DeFi platform, Balanced and its integration with Archway.
+
+Visit the ICON Community website for an up to date overview of connected blockchains. Check out the documentation and see if your favorite application is compatible with the ICON Cross-Chain Framework!
+
+
