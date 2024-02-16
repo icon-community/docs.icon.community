@@ -1,4 +1,4 @@
-<img src="https://www.docs.icon.community/images/icon-documentation-over-white.svg" width="300">
+<img src="/images/icon-documentation-over-white.svg" width="300">
 
 [![Discord](https://img.shields.io/discord/880651922682560582?logo=discord)](https://discord.gg/b5QvCXJjJM)
 [![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
@@ -7,7 +7,7 @@
 [![Issues](https://img.shields.io/github/issues/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/pulls)
 
-# Welcome to XCALL.DEV
+# Welcome to ICON DOCUMENTATION
 
 Welcome to the official documentation site for xCall! 
 
