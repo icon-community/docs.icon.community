@@ -20,23 +20,46 @@ return (
 
 <main className="font-montserrat text-dark dark:text-light max-w-7xl min-h-screen mx-auto px-0 sm:px-4">
     
-    <div className='h-screen-3/4  flex flex-col justify-start px-4 sm:px-0 sm:justify-center  pt-28 sm:pt-0 items-start relative overflow-hidden'>
-        <h1 className='text-5xl mb-4 sm:text-[5rem] font-exo bg-gradient-to-r from-[#404853] to-[#93A0AF] text-transparent bg-clip-text'>Full Cross-Chain <br></br> Framework</h1>
+    <div className='h-screen-3/4 flex flex-col justify-start px-4 sm:px-0 sm:justify-center  pt-28 sm:pt-0 items-start relative overflow-hidden'>
+        <h1 className='text-5xl mb-4 sm:text-[5rem] font-exo bg-gradient-to-r from-[#404853] to-[#93A0AF] text-transparent bg-clip-text relative z-10'>Full Cross-Chain <br></br> Framework</h1>
         <ChainChecker/>
         <HeroImage />
         
     </div>
 
     <div className='grid grid-cols 1 sm:grid-cols-3'>
-        <Link href='cross-chain-communication' className='col-span-1 sm:col-span-2 py-6 px-4 dark:hover:bg-zinc-900/50 hover:bg-zinc-100/50 transition-all'>
-            <h3 className='w-full sm:w-1/2 font-exo text-xl sm:text-3xl text-xteal mb-6'>Go Cross-chain with ICON, no matter your home  blockchain</h3>
-            <p className='text-sm sm:text-md'>ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use general message passing standard and connections to secure bridging protocols</p>
-        </Link>
-        <Link href='develop-on-icon-chain'  className='col-span-1 py-6 px-4 flex flex-col dark:hover:bg-zinc-900/50 hover:bg-zinc-100/50 transition-all'>
-            <h3 className='font-exo text-xl sm:text-3xl text-xteal mb-6'>Develop on ICON chain</h3>
-            <div className='flex-grow'></div>
-            <p className='text-sm sm:text-md'>Comprehensive resources for building on the ICON blockchain, covering topics from setting up accounts to smart contract deployment</p>
-        </Link>
+        <div className='col-span-1 sm:col-span-2 py-6 px-4  transition-all group space-y-4'>
+            <h3 className='w-full sm:w-1/2 font-exo text-xl sm:text-3xl text-xteal '>Go Cross-chain with ICON, no matter your home  blockchain</h3>
+            <p className='text-sm sm:text-md '>ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use general message passing standard and connections to secure bridging protocols</p>
+            <Link className='transition-all group-hover:grayscale-0 bg-xteal block w-fit px-4 py-2 rounded-full grayscale-[50%] text-white font-bold' href='/welcome'>See how</Link>
+        </div>
+        <div className='col-span-1 py-6 px-4 flex flex-col space-y-4 group'>
+            <h3 className='font-exo text-xl sm:text-3xl text-xteal'>Dive into <br></br>Specific Content</h3>
+            <Link className="text-xteal flex items-center" href='/cross-chain-communication'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2 grayscale-[50%] group-hover:grayscale-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+              <p className='text-dark dark:text-light text-sm sm:text-md'>Cross-Chain General Message Passing</p>
+            </Link>
+            <Link className="text-xteal flex items-center" href='/advanced-topics/tutorials'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2 grayscale-[50%] group-hover:grayscale-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+              <p className='text-dark dark:text-light text-sm sm:text-md'>Tutorials</p>
+            </Link>
+            <Link className="text-xteal flex items-center" href='/cross-chain-communication/active-development'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2 grayscale-[50%] group-hover:grayscale-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+              <p className='text-dark dark:text-light text-sm sm:text-md'>Active ICON Framework Development</p>
+            </Link>
+            <Link className="text-xteal flex items-center" href='/operate-icon/how-to-run-a-validator-node'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5 mr-2 grayscale-[50%] group-hover:grayscale-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+              <p className='text-dark dark:text-light text-sm sm:text-md'>How to Run a Validator Node</p>
+            </Link>
+        </div>
     </div>
 
 
