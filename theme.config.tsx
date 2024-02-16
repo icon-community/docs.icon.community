@@ -170,7 +170,7 @@ const config: DocsThemeConfig = {
       <div className="grid w-full grid-cols-2 sm:grid-cols-3">
         <div className="flex flex-col px-2">
           <h3 className="font-bold">Ecosystem</h3>
-          <Link className='text-sm' href="https://forum.icon.community/">Forum</Link>
+          <Link className='text-sm ' href="https://forum.icon.community/">Forum</Link>
           <Link className='text-sm'  href="https://tracker.icon.community/">ICON Tracker</Link>
           <Link className='text-sm'  href="https://xcallscan.xyz/">Cross-chain Tracker</Link>
           <Link className='text-sm'  href="https://icon.community/hanawallet/">Wallet</Link>
