@@ -167,18 +167,24 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <div className="grid w-full grid-cols-2 ">
-        <div className="flex flex-col">
-          <h3 className="font-bold">Column 1</h3>
-          <Link href="/">A</Link>
-          <Link href="/">Bunch</Link>
-          <Link href="/">Of Links</Link>
+      <div className="grid w-full grid-cols-2 sm:grid-cols-3">
+        <div className="flex flex-col px-2">
+          <h3 className="font-bold">Ecosystem</h3>
+          <Link className='text-sm' href="https://forum.icon.community/">Forum</Link>
+          <Link className='text-sm'  href="https://tracker.icon.community/">ICON Tracker</Link>
+          <Link className='text-sm'  href="https://xcallscan.xyz/">Cross-chain Tracker</Link>
+          <Link className='text-sm'  href="https://icon.community/hanawallet/">Wallet</Link>
         </div>
-        <div className="flex flex-col">
-          <h3 className="font-bold">Column 2</h3>
-          <Link href="/">Some</Link>
-          <Link href="/">More</Link>
-          <Link href="/">Links</Link>
+        <div className="flex flex-col px-2">
+          <h3 className="font-bold">Resources</h3>
+          <Link className='text-sm'  href="https://icon.community/branding-kit/">Branding Kit</Link>
+          <Link className='text-sm'  href="https://icon.community/glossary/">Glossary</Link>
+        </div>
+        <div className="flex flex-col px-2">
+          <h3 className="font-bold">Community</h3>
+          <Link className='text-sm'  href="https://icon.community/icondiscord/">Discord</Link>
+          <Link  className='text-sm' href="https://twitter.com/helloiconworld">X (Twitter)</Link>
+          <Link  className='text-sm' href="https://coinmarketcap.com/community/profile/ICONNetwork">CoinMarketCap</Link>
         </div>
       </div>
     )
