@@ -75,7 +75,7 @@ const ChainChecker = () => {
               </div>  
               
               <div className='relative h-[74px] px-4 py-1 ml-4 font-medium border-l-2 border-dark/40 dark:border-light/40' >
-                {matchingChains[0]?.status === 'not started' && <p>Currently on our waiting list</p>}
+                {matchingChains[0]?.status === 'not started' && <p>Currently not under development</p>}
                 {matchingChains[0]?.status === 'development' && <p>Currently under development</p>}
                 {matchingChains[0]?.status === 'testnet' && <p>Available on testnet</p>}
                 {matchingChains[0]?.status === 'internal audits' && <p>Undergoing internal audits</p>}
@@ -89,7 +89,7 @@ const ChainChecker = () => {
                 {matchingChains[0]?.status === 'mainnet' && <Link className="absolute block font-bold top-10 left-4 text-xteal" href='/cross-chain-communication/general-message-passing-xcall'>Get started</Link>}
                 
               </div>
-            </div>} 
+            </div> } 
               
       </div>}
       
