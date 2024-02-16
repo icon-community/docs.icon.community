@@ -1,3 +1,5 @@
+// These are your options for status: "mainnet", "testnet", "development", "audits", "not started"
+
 export const activeintegrations = [
     {"name": "Archway", "status": "mainnet", "protocol": ["IBC"], "logo": "/chainlogos/Archway.svg"},
     {"name": "Injective", "status": "mainnet", "protocol": ["IBC"], "logo": "/chainlogos/Injective.svg"},
@@ -13,18 +15,26 @@ export const activeintegrations = [
     {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"}
 ];
 
+// These are your options for status: "mainnet", "testnet", "development", "audits", "not started"
+
 export const additionaldevelopment = [
     {
-        "name": "Balanced Oracle",
-        "status": "Ongoing",
-        "description": "Balanced Oracle is a decentralized oracle network that provides reliable, tamper-proof data for smart contracts on ICON.",
-        "notes": "Balanced Oracle is currently in the development phase and is expected to be released in Q4 2021."
+        "name": "Wormhole xCall adaptor",
+        "status": "mainnet",
+        "description": "xCall is not an interoperability solution, it is a messaging standard. The adaptors we have built make xCall compatible with Wormhole and Layerzero, which are interoperable protocols.",
+        "notes": "Wormhole adaptors have been released on mainnet for Optimism, Base, Arbitrum, and Avalanche."
     },
     {
-        "name": "Central Relay",
-        "status": "Ongoing",
-        "description": "The central relay is a service that allows ICON to communicate with other blockchains and external systems.",
-        "notes": "The central relay is currently in the development phase and is expected to be released in Q4 2021."
+        "name": "LayerZero Relay",
+        "status": "mainnet",
+        "description": "xCall is not an interoperability solution, it is a messaging standard. The adaptors we have built make xCall compatible with Wormhole and Layerzero, which are interoperable protocols.",
+        "notes": "Layerzero adaptors have been released for BSC, Optimism, Avalanche, Arbitrum, and Ethereum."
+    },
+    {
+        "name": "xCall v2.1",
+        "status": "audits",
+        "description": "Ongoing work undergoing internal audit processes",
+        "notes": "Includes ICON emission contracts related to the enshrinement of Balanced."
     }
 ]
 
