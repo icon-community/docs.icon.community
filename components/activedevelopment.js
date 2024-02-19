@@ -44,7 +44,6 @@ export const allintegrations = [
     {"name": "Solana", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Ripple", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Cardano", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
-    {"name": "Dogecoin", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Chainlink", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "TRON", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Polkadot", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
