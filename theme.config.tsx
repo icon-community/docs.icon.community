@@ -185,6 +185,8 @@ const config: DocsThemeConfig = {
           <Link className='text-sm'  href="https://icon.community/icondiscord/">Discord</Link>
           <Link  className='text-sm' href="https://twitter.com/helloiconworld">X (Twitter)</Link>
           <Link  className='text-sm' href="https://coinmarketcap.com/community/profile/ICONNetwork">CoinMarketCap</Link>
+          <p className="text-sm opacity-100">-</p>
+          <p className='text-sm' >© ICON Foundation 2024</p>
         </div>
       </div>
     )
