@@ -81,7 +81,7 @@ const ChainChecker = () => {
                 {matchingChains[0]?.status === 'mainnet' && <p >Available on mainnet</p>}
                 
                 
-                {matchingChains[0]?.status === 'not started' && <Link className="absolute block font-bold top-10 left-4 text-xteal" href='/cross-chain-communication/general-message-passing-xcall'>View active development</Link>}
+                {matchingChains[0]?.status === 'not started' && <Link className="absolute block font-bold top-10 left-4 text-xteal" href='/cross-chain-communication/active-development'>View active development</Link>}
                 {matchingChains[0]?.status === 'development' && <a className="absolute block font-bold top-10 left-4 text-xteal" href='cross-chain-communication/active-development'>Keep track here</a>}
                 {matchingChains[0]?.status === 'testnet' && <a className="absolute block font-bold top-10 left-4 text-xteal" href='cross-chain-communication/active-development'>Keep track here</a>}
                 {matchingChains[0]?.status === 'internal audits' && <a className="absolute block font-bold top-10 left-4 text-xteal" href='cross-chain-communication/active-development'>Keep track here</a>}
