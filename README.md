@@ -4,20 +4,20 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
 [![Website](https://img.shields.io/badge/Website-docs.icon.community-blue)](https://www.docs.icon.community)
 
-[![Issues](https://img.shields.io/github/issues/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/pulls)
+[![Issues](https://img.shields.io/github/issues/icon-project/xcall.dev)](https://github.com/icon-community/docs.icon.community/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/icon-project/xcall.dev)](https://github.com/icon-community/docs.icon.community/pulls)
 
-# Welcome to ICON DOCUMENTATION
+# Welcome 
 
-Welcome to the official documentation site for xCall! 
+Welcome to the official documentation site for ICON! 
 
-**xCall is a standardized interface designed to simplify cross-chain development by abstracting away the varying technical architectures of underlying protocols.**
+**ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use general message passing standard and connections to secure bridging protocols**
 
-This documentation serves as a comprehensive guide to using and understanding all aspects of xCall, from setup to advanced features. Whether you're a new user starting your journey or an experienced professional seeking to delve deeper, we've got you covered. We continuously work towards making our documentation as clear and detailed as possible, so you can leverage the full power of xCall. 
+This documentation serves as a comprehensive guide to using and understanding all aspects of ICON, from setup to advanced features. Whether you're a new user starting your journey or an experienced professional seeking to delve deeper, we've got you covered. We continuously work towards making our documentation as clear and detailed as possible, so you can leverage the full power of ICON. 
 
-Thank you for choosing xCall, and we hope this documentation aids you in making the most of our interface.
+Thank you for choosing ICON, and we hope this documentation aids you in making the most of our interface.
 
-## Running xcall.dev locally with command line
+## Running docs.icon.community locally with command line
 
 Before you start, ensure that Git and Node.js are installed on your local machine.
 
