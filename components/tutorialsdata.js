@@ -5,7 +5,7 @@ import Tile from "./tile"
       {
         title: "Setting up initCommissionRate, setCommissionRate and unjail",
         description: "Learn how to set up initCommissionRate, setCommissionRate and unjail in ICON platform",
-        href: "tutorials/tutorials/commission-rate"
+        href: "tutorials/commission-rate"
       },
       {
         title: "xCall Tutorials Part 1",
