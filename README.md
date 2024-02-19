@@ -1,8 +1,8 @@
-<img src="/public/images/icon-documentation-over-white.svg" width="300">
+<img src="/public/images/icon-documentation-over-white.svg" width="600">
 
 [![Discord](https://img.shields.io/discord/880651922682560582?logo=discord)](https://discord.gg/b5QvCXJjJM)
 [![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
-[![Website](https://img.shields.io/badge/Website-xcall.dev-blue)](https://www.docs.icon.community)
+[![Website](https://img.shields.io/badge/Website-docs.icon.community-blue)](https://www.docs.icon.community)
 
 [![Issues](https://img.shields.io/github/issues/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/icon-project/xcall.dev)](https://github.com/icon-project/xcall.dev/pulls)
