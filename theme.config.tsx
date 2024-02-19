@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://icon.community/icondiscord/"
   },
-  docsRepositoryBase: "https://github.com/icon-community/docs.icon.community",
+  docsRepositoryBase: "https://github.com/icon-community/docs.icon.community/blob/master",
   useNextSeoProps() {
     const { asPath } = useRouter();
     const { title, frontMatter } = useConfig();
