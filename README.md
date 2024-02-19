@@ -1,4 +1,4 @@
-<img src="/public/images/icon-documentation-over-white.svg" width="600">
+<img src="/public/images/icon-documentation-over-white.svg" width="400">
 
 [![Discord](https://img.shields.io/discord/880651922682560582?logo=discord)](https://discord.gg/b5QvCXJjJM)
 [![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
