@@ -59,7 +59,6 @@ const ChainChecker = () => {
                 <Image src='/images/connected-protocols/btp.svg' alt='BTP' width={40} height={40} />
                 <Image src='/images/connected-protocols/wormhole.svg' alt='Wormhole' width={40} height={40} />
                 <Image src='/images/connected-protocols/layerzero.svg' alt='Layerzero' width={40} height={40} />
-                <Image src='/images/connected-protocols/icon-bridge.svg' alt='ICON Bridge' width={40} height={40} />
               </div>
             </div>  
       </div>}
