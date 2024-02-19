@@ -4,8 +4,8 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
 [![Website](https://img.shields.io/badge/Website-docs.icon.community-blue)](https://www.docs.icon.community)
 
-[![Issues](https://img.shields.io/github/issues/icon-project/xcall.dev)](https://github.com/icon-community/docs.icon.community/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/icon-project/xcall.dev)](https://github.com/icon-community/docs.icon.community/pulls)
+[![Issues](https://img.shields.io/github/issues/icon-community/docs.icon.community)](https://github.com/icon-community/docs.icon.community/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/icon-community/docs.icon.community)](https://github.com/icon-community/docs.icon.community/pulls)
 
 # Welcome 
 
@@ -23,34 +23,34 @@ Before you start, ensure that Git and Node.js are installed on your local machin
 
 Follow these steps to run the project locally:
 
-1. **Fork the Repository**: Navigate to the `xcall.dev` repository on GitHub. Click the 'Fork' button in the upper right corner of the repository page to create a copy of the repository in your own GitHub account.
+1. **Fork the Repository**: Navigate to the `docs.icon.community` repository on GitHub. Click the 'Fork' button in the upper right corner of the repository page to create a copy of the repository in your own GitHub account.
 2. **Clone the Repository**: Open a terminal on your computer. Clone the repository to your local machine using the `git clone` command, like this:
-```git clone https://github.com/<yourusername>/xcall.dev.git```
+```git clone https://github.com/<yourusername>/docs.icon.community.git```
 3. **Navigate to the Repository**: Use the `cd` command to navigate into the cloned repository:
-```cd xcall.dev```
+```cd docs.icon.community```
 4. **Install Dependencies**: This project relies on Node.js and has dependencies that need to be installed. Use npm (Node Package Manager) to install these dependencies:
 ```npm install```
 5. **Run the Project Locally**: You can now run the project on your machine. The command to run the project is:
 ```npm run dev```
 
-## Running xcall.dev locally with VSCode
+## Running docs.icon.community locally with VSCode
 
 Before you start, ensure that Git and Node.js are installed on your local machine, and you have Visual Studio Code (VSCode) set up.
 
 Follow these steps to run the project locally:
 
-1. **Fork the Repository**: Navigate to the `xcall.dev` repository on GitHub. Click the 'Fork' button in the upper right corner of the repository page to create a copy of the repository in your own GitHub account.
+1. **Fork the Repository**: Navigate to the `docs.icon.community` repository on GitHub. Click the 'Fork' button in the upper right corner of the repository page to create a copy of the repository in your own GitHub account.
 2. **Clone the Repository**: Open VSCode, then open the Terminal (View > Terminal). Clone the repository to your local machine using the `git clone` command, like this:
-```git clone https://github.com/<yourusername>/xcall.dev.git```
+```git clone https://github.com/<yourusername>/docs.icon.community.git```
 Replace `<yourusername>` with your GitHub username.
 3. **Navigate to the Repository**: Use the `cd` command in the terminal to navigate into the cloned repository:
-```cd xcall.dev```
+```cd docs.icon.community```
 4. **Install Dependencies**: This project relies on Node.js and has dependencies that need to be installed. Use npm (Node Package Manager) to install these dependencies:
 ```npm install```
 5. **Run the Project Locally**: You can now run the project on your machine. The command to run the project is:
 ```npm run dev```
 
-## How to contribute to xcall.dev
+## How to contribute to docs.icon.community
 
 Each documentation pages offers an opportunity for visitors to provide feedback, ask questions or contribute directly. Look for:
 
