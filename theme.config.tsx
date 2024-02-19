@@ -7,12 +7,12 @@ import Link from "next/link";
 
 const config: DocsThemeConfig = {
   project: {
-    link: "https://github.com/icon-project"
+    link: "https://github.com/icon-community/docs.icon.community"
   },
   chat: {
     link: "https://icon.community/icondiscord/"
   },
-  docsRepositoryBase: "https://github.com/icon-project",
+  docsRepositoryBase: "https://github.com/icon-community/docs.icon.community",
   useNextSeoProps() {
     const { asPath } = useRouter();
     const { title, frontMatter } = useConfig();
