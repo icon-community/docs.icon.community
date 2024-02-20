@@ -1,0 +1,48 @@
+# How to calculate rewards
+
+## Reward calculation
+
+Currently rewards are calculated this way:
+
+* Fetch `iglobal` by calling `getNetworkInfo` method of chain contract (`cx00..00`) divide by 10**18 (to convert from units in loop)
+* Fetch `iprep` by calling `getNetworkInfo` method of chain contract (`cx00..00`)
+* Fetch `totalPower` by calling `getNetworkInfo` method of chain contract (`cx00..00`) Fetch prep power (power) by calling `getPRep` method chain contract (`cx00..00`)
+* Fetch `commissionRate` by calling `getPRep` method chain contract (`cx00..00`) divide by 10000
+
+$$
+VVMP = Validator \enspace and \enspace Voter \enspace Monthly \enspace Reward
+\\
+
+VVMP = prepPower * \frac{\Big(iglobal * \frac{iprep}{10000}\Big)}{totalPower}
+\\
+$$
+
+$$
+VoMP = Voter \enspace Monthly \enspace Reward
+\\
+VoMP = VVMP * (1 - commissionRate)
+\\
+VaMP = Validator \enspace Monthly \enspace Reward
+\\
+
+VaMP = VVMP * commissionRate
+$$
+
+## Reward dilution for voters due to bond mechanism
+
+If the validator has bonded more than 5% of their voted amount (delegated amount + bonded), as new voters add delegation to the prep the prepPower variable will increase which means the validator and voters will receive more rewards.
+
+
+If the bond is equal or less than 5% any increase in delegation (new voters delegating more to the validator) will only dilute the rewards of all the voters because the prepPower will not increase.
+
+$$
+bond \le 5\% \implies prepPower \enspace doesnt \enspace increases \enspace with \enspace new \enspace voters
+\\
+prepPower = min \Big(bonded*20, bonded+delegated\Big)
+\\
+Delegated \enspace amount \enspace increase \enspace without \enspace increase \enspace in \enspace bonding \implies \\ No \enspace change \enspace in \enspace prepPower \implies No \enspace change \enspace in \enspace rewards \implies \\ generates \enspace reward \enspace dilution
+$$
+
+If prepPower doesnt increase then voters monthly reward gets divided by a bigger amount of delegated (voters)
+
+![](/images/rewards1.png)
