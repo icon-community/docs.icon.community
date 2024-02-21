@@ -25,7 +25,7 @@ export const additionaldevelopment = [
         "notes": "Wormhole adaptors have been released on mainnet for Optimism, Base, Arbitrum, and Avalanche."
     },
     {
-        "name": "LayerZero Relay",
+        "name": "LayerZero xCall adaptor",
         "status": "mainnet",
         "description": "xCall is not an interoperability solution, it is a messaging standard. The adaptors we have built make xCall compatible with Wormhole and Layerzero, which are interoperable protocols.",
         "notes": "Layerzero adaptors have been released for BSC, Optimism, Avalanche, Arbitrum, and Ethereum."
