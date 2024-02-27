@@ -12,7 +12,7 @@ export const activeintegrations = [
     {"name": "Composable", "status": "development", "protocol": ["IBC"], "logo": "/chainlogos/Composable.svg"},
     {"name": "Optimism", "status": "development", "protocol": [""], "logo": "/chainlogos/Optimism.svg"},
     {"name": "Arbitrum", "status": "development", "protocol": [""], "logo": "/chainlogos/Arbitrum.svg"},
-    {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"}
+    {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"},
     {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/waiting.svg"}
 ];
 
