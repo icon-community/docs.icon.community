@@ -36,6 +36,12 @@ export const additionaldevelopment = [
         "status": "audits",
         "description": "Ongoing work undergoing internal audit processes",
         "notes": "Includes ICON emission contracts related to the enshrinement of Balanced."
+    },
+    {
+        "name": "Central Relay Sui module",
+        "status": "not started",
+        "description": "Adaptor for relay to make it compatible with ICON's GMP on Sui",
+        "notes": "Currently in the Discovery phase."
     }
 ]
 
