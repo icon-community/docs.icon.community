@@ -13,7 +13,7 @@ export const activeintegrations = [
     {"name": "Optimism", "status": "development", "protocol": [""], "logo": "/chainlogos/Optimism.svg"},
     {"name": "Arbitrum", "status": "development", "protocol": [""], "logo": "/chainlogos/Arbitrum.svg"},
     {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"},
-    {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/waiting.svg"}
+    {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Sui.svg"}
 ];
 
 // These are your options for status: "mainnet", "testnet", "development", "audits", "not started"
