@@ -1,10 +1,23 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_113_261)">
-<path d="M0 50.4C0 22.5646 22.3854 0 50 0C77.6138 0 100 22.5646 100 50.4V99.95C99.9731 72.3585 77.5977 50 50 50C22.3862 50 7.62939e-05 72.3854 7.62939e-05 100L0 50.4Z" fill="black"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:#FF4D00;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="100" height="100"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st0">
+		<g>
+			<path class="st1" d="M0,50.4C0,22.6,22.4,0,50,0c27.6,0,50,22.6,50,50.4v49.5C100,72.4,77.6,50,50,50C22.4,50,0,72.4,0,100
+				L0,50.4z"/>
+		</g>
+	</g>
 </g>
-<defs>
-<clipPath id="clip0_113_261">
-<rect width="100" height="100" fill="white"/>
-</clipPath>
-</defs>
 </svg>
