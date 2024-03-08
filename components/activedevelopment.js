@@ -6,12 +6,12 @@ export const activeintegrations = [
     {"name": "Neutron", "status": "mainnet", "protocol": ["IBC"], "logo": "/chainlogos/Neutron.svg"},
     {"name": "BNB Chain", "status": "mainnet", "protocol": ["BTP"], "logo": "/chainlogos/Binance-Smart-Chain.svg"},
     {"name": "Ethereum", "status": "mainnet", "protocol": ["BTP"], "logo": "/chainlogos/Ethereum.svg"},
-    {"name": "Havah", "status": "testnet", "protocol": ["BTP"], "logo": "/chainlogos/Havah.svg"},
-    {"name": "Base", "status": "testnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Base.svg"},
-    {"name": "Avalanche", "status": "testnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Avalanche.svg"},
+    {"name": "Havah", "status": "mainnet", "protocol": ["BTP"], "logo": "/chainlogos/Havah.svg"},
+    {"name": "Base", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Base.svg"},
+    {"name": "Avalanche", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Avalanche.svg"},
     {"name": "Composable", "status": "development", "protocol": ["IBC"], "logo": "/chainlogos/Composable.svg"},
-    {"name": "Optimism", "status": "development", "protocol": [""], "logo": "/chainlogos/Optimism.svg"},
-    {"name": "Arbitrum", "status": "development", "protocol": [""], "logo": "/chainlogos/Arbitrum.svg"},
+    {"name": "Optimism", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Optimism.svg"},
+    {"name": "Arbitrum", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Arbitrum.svg"},
     {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"},
     {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Sui.svg"}
 ];
