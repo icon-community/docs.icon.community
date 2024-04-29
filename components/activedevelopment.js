@@ -9,11 +9,14 @@ export const activeintegrations = [
     {"name": "Havah", "status": "mainnet", "protocol": ["BTP"], "logo": "/chainlogos/Havah.svg"},
     {"name": "Base", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Base.svg"},
     {"name": "Avalanche", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Avalanche.svg"},
-    {"name": "Composable", "status": "development", "protocol": ["IBC"], "logo": "/chainlogos/Composable.svg"},
+    {"name": "Composable", "status": "testnet", "protocol": ["IBC"], "logo": "/chainlogos/Composable.svg"},
     {"name": "Optimism", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Optimism.svg"},
     {"name": "Arbitrum", "status": "mainnet", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Arbitrum.svg"},
     {"name": "ICON", "status": "mainnet", "protocol": ["BTP", "IBC"], "logo": "/chainlogos/ICON.svg"},
-    {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Sui.svg"}
+    {"name": "Sui", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Sui.svg"},
+    {"name": "Solana", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Solana.svg"},
+    {"name": "Stacks", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Stacks.svg"},
+    {"name": "Stellar", "status": "development", "protocol": ["Centralised Relay"], "logo": "/chainlogos/Stellar.svg"},
 ];
 
 // These are your options for status: "mainnet", "testnet", "development", "audits", "not started"
@@ -48,7 +51,6 @@ export const additionaldevelopment = [
 export const allintegrations = [
     ...activeintegrations,
     {"name": "Bitcoin", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
-    {"name": "Solana", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Ripple", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Cardano", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Chainlink", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
@@ -61,7 +63,6 @@ export const allintegrations = [
     {"name": "Immutable", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Aptos", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "NEAR", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
-    {"name": "Stellar", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Kaspa", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "Celestia", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
     {"name": "OKB", "status": "not started", "protocol": ["N/A"], "logo": "chainlogos/no-results.svg"},
