@@ -19,5 +19,12 @@
         "layout": "default",
         "breadcrumb": false
       }
-    }
+    },
+    "tracker": {
+        "title": "Tracker",
+        "theme": {
+          "layout": "default",
+          "breadcrumb": false
+        }
+      }
   }

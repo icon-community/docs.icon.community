@@ -1,0 +1,46 @@
+---
+description: Dedicated explorer for ICON General Message Passing (xCall) transactions.
+---
+
+import { Callout } from "nextra/components";
+
+
+# xCallscan APIs
+This documentation describes how to use the xcallscan REST APIs
+
+<Callout type="info">
+  Visit <a className="inline-block font-semibold" href="https://xcallscan.xyz/">xCallscan</a> for the latest transactions on ICON's cross-chain framework.
+</Callout>
+
+### BASE_URL
+* Mainnet: https://xcallscan.xyz
+* Testnet: https://testnet.xcallscan.xyz
+
+### /api/messages
+Listing all messages
+
+GET ```base_url/api/messages```
+
+Params:
+* ```limit```: the maximum number of items
+* ```skip```: tarting point within the collection of resource results
+
+### /api/messages/:id
+Get message by id
+
+GET ```base_url/api/messages/:id```
+
+Params:
+```:id```: message id
+
+### /api/search
+Search messages by transaction hash or serial number
+
+GET ```base_url/api/search```
+
+Params:
+* ```value```: transaction hash OR serial number
+
+<Callout type="warning">
+  Looking for the ICON blockchain tracker? Visit <a className="inline-block font-semibold" href="https://tracker.icon.community/">ICON Tracker</a> for all transactions on ICON's L1 blockchain network.
+</Callout>
