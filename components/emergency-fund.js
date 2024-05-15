@@ -40,7 +40,7 @@ import { Callout } from "nextra/components";
         <div className="flex flex-col space-y-3">
           {emergencyFund && emergencyFund.length > 0 ? (
             <Callout type="info" emoji="💡">
-              The ICON Emergency Fund currently holds <span className='px-2 py-1 font-bold border rounded-full border-blue-950/60 '>{parseInt(emergencyFund[0].balance, 10).toLocaleString()} ICX</span>
+              The ICON Emergency Fund currently holds <span className='px-2 py-1 font-bold border rounded-full border-blue-950/60 dark:border-blue-400'>{parseInt(emergencyFund[0].balance, 10).toLocaleString()} ICX</span>
             </Callout>           
           ) : (
             <p>No data available</p>
