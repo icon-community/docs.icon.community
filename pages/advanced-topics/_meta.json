@@ -33,5 +33,12 @@
       "layout": "default",
       "breadcrumb": false
     }
+  },
+  "emergency-fund": {
+    "title": "Emergency Fund",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
   }
 }
