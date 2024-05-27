@@ -21,7 +21,7 @@
       }
     },
     "tracker": {
-        "title": "Tracker",
+        "title": "Tracker API",
         "theme": {
           "layout": "default",
           "breadcrumb": false
