@@ -2,8 +2,9 @@ import React from "react";
 import { DocsThemeConfig, useConfig, useTheme } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
+
+type NextSeoProps = any
 
 const config: DocsThemeConfig = {
   project: {
@@ -13,7 +14,7 @@ const config: DocsThemeConfig = {
     link: "https://icon.community/icondiscord/"
   },
   docsRepositoryBase: "https://github.com/icon-community/docs.icon.community/blob/master",
-  useNextSeoProps() {
+  useNextSeoProps(): NextSeoProps {
     const { asPath } = useRouter();
     const { title, frontMatter } = useConfig();
     if (asPath !== "/") {
@@ -30,6 +31,20 @@ const config: DocsThemeConfig = {
               width: 1200,
               height: 630,
               alt: "ICON Documentation"
+            }
+          ]
+        },
+        twitter: {
+          cardType: 'summary_large_image',
+          site: '@helloiconworld',
+          description: frontMatter.description,
+          title: 'ICON Cross-Chain Documentation',
+          images: [
+            {
+              url: 'https://docs.icon.community/images/link-preview.jpg',
+              alt: 'ICON Cross-Chain Documentation',
+              width: 1200,
+              height: 630,
             }
           ]
         }
@@ -51,6 +66,21 @@ const config: DocsThemeConfig = {
               width: 1200,
               height: 630,
               alt: "ICON Documentation"
+            }
+          ]
+        },
+        twitter: {
+          cardType: 'summary_large_image',
+          site: '@helloiconworld',
+          description:
+            "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+          title: "ICON Documentation",
+          images: [
+            {
+              url: 'https://docs.icon.community/images/link-preview.jpg',
+              alt: 'ICON Cross-Chain Documentation',
+              width: 1200,
+              height: 630,
             }
           ]
         }
