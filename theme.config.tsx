@@ -3,8 +3,7 @@ import { DocsThemeConfig, useConfig, useTheme } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-
-type NextSeoProps = any
+import { NextSeoProps } from "next-seo";
 
 const config: DocsThemeConfig = {
   project: {
@@ -17,73 +16,57 @@ const config: DocsThemeConfig = {
   useNextSeoProps(): NextSeoProps {
     const { asPath } = useRouter();
     const { title, frontMatter } = useConfig();
+    const commonMetadata = {
+      titleTemplate: "%s – ICON Documentation",
+      description: frontMatter.description || "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+      openGraph: {
+        title: "ICON Documentation",
+        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+        url: `https://docs.icon.community${asPath}`,
+        siteName: "ICON Documentation",
+        images: [
+          {
+            url: "https://docs.icon.community/images/link-preview.jpg",
+            alt: "ICON Documentation",
+            width: 1200,
+            height: 630
+          },
+          {
+            url: "https://docs.icon.community/images/link-preview.jpg",
+            alt: "ICON Documentation",
+            width: 1800,
+            height: 1600
+          }
+        ],
+        locale: "en_US",
+        type: "website"
+      },
+      twitter: {
+        cardType: 'summary_large_image',
+        site: '@helloiconworld',
+        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+        title: "ICON Documentation",
+        images: {
+          url: "https://docs.icon.community/images/link-preview.jpg",
+          alt: "ICON Documentation",
+          width: 1200,
+          height: 630
+        }
+      }
+    };
+
     if (asPath !== "/") {
       return {
+        ...commonMetadata,
         titleTemplate: "%s – ICON Documentation",
-        description: frontMatter.description,
-        openGraph: {
-          description: frontMatter.description,
-          type: "website",
-          url: "https://docs.icon.community/",
-          images: [
-            {
-              url: "https://docs.icon.community/images/link-preview.jpg",
-              width: 1200,
-              height: 630,
-              alt: "ICON Documentation"
-            }
-          ]
-        },
-        twitter: {
-          cardType: 'summary_large_image',
-          site: '@helloiconworld',
-          description: frontMatter.description,
-          title: 'ICON Cross-Chain Documentation',
-          images: [
-            {
-              url: 'https://docs.icon.community/images/link-preview.jpg',
-              alt: 'ICON Cross-Chain Documentation',
-              width: 1200,
-              height: 630,
-            }
-          ]
-        }
+        description: frontMatter.description
       };
     } else {
       return {
+        ...commonMetadata,
         title: "ICON Documentation",
         description:
-          "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
-        openGraph: {
-          title: "ICON Documentation",
-          description:
-            "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
-          type: "website",
-          url: "https://docs.icon.community/",
-          images: [
-            {
-              url: "https://docs.icon.community/images/link-preview.jpg",
-              width: 1200,
-              height: 630,
-              alt: "ICON Documentation"
-            }
-          ]
-        },
-        twitter: {
-          cardType: 'summary_large_image',
-          site: '@helloiconworld',
-          description:
-            "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
-          title: "ICON Documentation",
-          images: [
-            {
-              url: 'https://docs.icon.community/images/link-preview.jpg',
-              alt: 'ICON Cross-Chain Documentation',
-              width: 1200,
-              height: 630,
-            }
-          ]
-        }
+          "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols."
       };
     }
   },
