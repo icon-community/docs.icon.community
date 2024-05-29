@@ -16,6 +16,7 @@ export const InfiniteMovingCards = ({
     messages: number;
     chain: string;
     role: string;
+    image: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -82,7 +83,7 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-2 w-max flex-nowrap",
+          " flex min-w-full shrink-0 gap-4 pt-2 pb-1 w-max flex-nowrap",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -100,8 +101,8 @@ export const InfiniteMovingCards = ({
               <div className=" relative z-20 text-sm leading-[1.6] text-gray-400 font-normal flex flex-row items-center">
                 <span className="mr-1 text-gray-800 dark:text-gray-100 ">{item.messages} messages </span> {item.role === "src" ? "have left" : "have arrived on"}
                 <div className="flex flex-row items-center ml-2 space-x-2"> 
-                  <Image className="w-4" src={`/chainlogos/${item.chain}.svg`} alt={item.chain} height={40} width={40}/>
-                  <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
+                  <Image className="w-4" src={`/chainlogos/${item.image}`} alt={item.chain} height={40} width={40}/>
+                  <span className=" text-sm leading-[1.6] text-gray-800 dark:text-gray-100  font-normal">
                     {item.chain}
                   </span>
                 </div> 
