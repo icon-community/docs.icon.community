@@ -21,15 +21,18 @@
     "@mendable/search": "^0.0.183",
     "@tailwindcss/typography": "^0.5.9",
     "@vercel/analytics": "^1.0.1",
+    "clsx": "^2.1.1",
     "cookies-next": "^2.1.2",
     "feed": "^4.2.2",
+    "framer-motion": "^11.2.6",
     "globby": "^11.0.1",
     "next": "^13.0.6",
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.2",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "18.11.10",
