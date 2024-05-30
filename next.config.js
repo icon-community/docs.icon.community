@@ -14,6 +14,15 @@ module.exports = withNextra({
       }
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/statistics/total_messages/:path*',  
+        destination: 'https://xcallscan.xyz/api/statistics/total_messages/:path*'
+      },
+      // Add other rewrites here if needed
+    ];
+  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       require("./scripts/generate-sitemap");
