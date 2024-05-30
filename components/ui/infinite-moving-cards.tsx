@@ -90,7 +90,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-fit sm:w-[350px] max-w-full shadow dark:shadow-0 relative rounded-full dark:border  flex-shrink-0 border-slate-700 px-8 py-2 md:w-fit bg-gradient-to-br dark:from-[#111111] dark:via-[#111111] dark:to-black from-white via-white to-gray-100"           
+            className="w-fit sm:w-[350px] max-w-full shadow dark:shadow-0 relative rounded-full dark:border  flex-shrink-0 border-slate-700 px-4 sm:px-8 py-1 sm:py-2 md:w-fit bg-gradient-to-br dark:from-[#111111] dark:via-[#111111] dark:to-black from-white via-white to-gray-100"           
             key={idx}
           >
             <blockquote>
@@ -98,11 +98,11 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <div className=" relative z-20 text-sm leading-[1.6] text-gray-400 font-normal flex flex-row items-center">
+              <div className=" relative z-20 text-xs sm:text-sm leading-[1.6] text-gray-400 font-normal flex flex-row items-center">
                 <span className="mr-1 text-gray-800 dark:text-gray-100 ">{item.messages} messages </span> {item.role === "src" ? <><p className="hidden sm:inline-block">have left</p><p className="inline-block sm:hidden">from</p></> : <><p className="hidden sm:inline-block">have arrived on</p><p className="inline-block sm:hidden">to</p></>}
                 <div className="flex flex-row items-center ml-2 space-x-2"> 
                   <Image priority className="w-4" src={`/chainlogos/${item.image}`} alt={item.chain} height={40} width={40}/>
-                  <span className=" text-sm leading-[1.6] text-gray-800 dark:text-gray-100  font-normal">
+                  <span className="text-xs sm:text-sm leading-[1.6] text-gray-800 dark:text-gray-100 font-normal">
                     {item.chain}
                   </span>
                 </div> 

@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <APIDataContextProvider>
       <main lang="en" className="font-montserrat">
         <Layout>
-          <Topbar />
+          {/* <Topbar /> */}
           <Component {...pageProps} />
           <MendableChatBubble 
           anon_key='4a621d80-aa5b-43cc-8600-dd155943ba19' cmdShortcutKey='m' style={{ darkMode: true, accentColor: "#00B8CC" }} />
