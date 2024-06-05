@@ -12,8 +12,9 @@ const networks = [
     'avax', 'base', 'arbitrum', 'optimism'
 ];
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 export const APIDataContextProvider = ({ children }: { children: ReactNode }) => {
-    
     const [loading, setLoading] = useState(true);
     const [totalMessages, setTotalMessages] = useState(0);
     const [networkMessages, setNetworkMessages] = useState<Record<string, { src: number, dest: number }>>({});
@@ -22,22 +23,25 @@ export const APIDataContextProvider = ({ children }: { children: ReactNode }) =>
         const fetchData = async () => {
             setLoading(true);
             try {
-                const responseTracker = await fetch(XCALLTRACKER_ENDPOINT, { cache: 'no-store' });
+                const responseTracker = await fetch(XCALLTRACKER_ENDPOINT, { cache: 'force-cache' });
                 const responseTrackerData = await responseTracker.json();
                 setTotalMessages(responseTrackerData.data.total);
 
-                const networkPromises = networks.map(async (network) => {
+                const networkData: { network: string, src: number, dest: number }[] = [];
+
+                for (const network of networks) {
                     const [srcResponse, destResponse] = await Promise.all([
-                        fetch(`/api/statistics/total_messages?src_network=${network}`, { cache: 'no-store' }),
-                        fetch(`/api/statistics/total_messages?dest_network=${network}`, { cache: 'no-store' })
+                        fetch(`/api/statistics/total_messages?src_network=${network}`, { cache: 'force-cache' }),
+                        fetch(`/api/statistics/total_messages?dest_network=${network}`, { cache: 'force-cache' })
                     ]);
-                    
+
                     const [srcData, destData] = await Promise.all([srcResponse.json(), destResponse.json()]);
 
-                    return { network, src: srcData.data.total, dest: destData.data.total };
-                });
+                    networkData.push({ network, src: srcData.data.total, dest: destData.data.total });
 
-                const networkData = await Promise.all(networkPromises);
+                    await delay(1000); // delay for 1 second between each network fetch
+                }
+
                 const networkMessages = networkData.reduce((acc, { network, src, dest }) => {
                     acc[network] = { src, dest };
                     return acc;
@@ -50,10 +54,10 @@ export const APIDataContextProvider = ({ children }: { children: ReactNode }) =>
                 setLoading(false);
             }
         };
-    
+
         fetchData();
     }, []);
-    
+
     return (
         <APIDataContext.Provider value={{ loading, totalMessages, networkMessages }}>
             {children}
