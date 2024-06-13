@@ -12,8 +12,6 @@ const networks = [
     'avax', 'base', 'arbitrum', 'optimism'
 ];
 
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
 export const APIDataContextProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(true);
     const [totalMessages, setTotalMessages] = useState(0);
@@ -23,27 +21,25 @@ export const APIDataContextProvider = ({ children }: { children: ReactNode }) =>
         const fetchData = async () => {
             setLoading(true);
             try {
-                const responseTracker = await fetch(XCALLTRACKER_ENDPOINT, { cache: 'force-cache' });
+                // Fetch total messages
+                const responseTracker = await fetch(XCALLTRACKER_ENDPOINT, { cache: 'no-cache' });
                 const responseTrackerData = await responseTracker.json();
                 setTotalMessages(responseTrackerData.data.total);
 
-                const networkData: { network: string, src: number, dest: number }[] = [];
+                // Fetch source messages
+                const srcResponse = await fetch(`${XCALLTRACKER_ENDPOINT}?src_networks=${networks.join(',')}`, { cache: 'no-cache' });
+                const srcData = await srcResponse.json();
 
-                for (const network of networks) {
-                    const [srcResponse, destResponse] = await Promise.all([
-                        fetch(`/api/statistics/total_messages?src_network=${network}`, { cache: 'force-cache' }),
-                        fetch(`/api/statistics/total_messages?dest_network=${network}`, { cache: 'force-cache' })
-                    ]);
+                // Fetch destination messages
+                const destResponse = await fetch(`${XCALLTRACKER_ENDPOINT}?dest_networks=${networks.join(',')}`, { cache: 'no-cache' });
+                const destData = await destResponse.json();
 
-                    const [srcData, destData] = await Promise.all([srcResponse.json(), destResponse.json()]);
-
-                    networkData.push({ network, src: srcData.data.total, dest: destData.data.total });
-
-                    await delay(1000); // delay for 1 second between each network fetch
-                }
-
-                const networkMessages = networkData.reduce((acc, { network, src, dest }) => {
-                    acc[network] = { src, dest };
+                // Combine source and destination messages
+                const networkMessages = networks.reduce((acc, network) => {
+                    acc[network] = {
+                        src: srcData.data.src_networks[network]?.total || 0,
+                        dest: destData.data.dest_networks[network]?.total || 0
+                    };
                     return acc;
                 }, {} as Record<string, { src: number, dest: number }>);
 
