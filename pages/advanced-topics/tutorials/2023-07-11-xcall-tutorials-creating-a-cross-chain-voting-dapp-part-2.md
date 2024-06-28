@@ -1,21 +1,21 @@
 ---
-title: "xCall tutorial part 2: Deploying and interacting with a cross chain voting dapp."
+title: "ICON GMP (xCall) tutorial part 2: Deploying and interacting with a cross chain voting dapp."
 date: 2023-07-11
 author: espanicon
 slug: x-call-tutorial-part-2-deploying-and-interacting-with-a-cross-chain-voting-dapp
-description: xcall tutorial part 2, creating a cross chain voting dapp. Deploying and interacting with the contracts
+description: ICON GMP (xCall) tutorial part 2, creating a cross chain voting dapp. Deploying and interacting with the contracts
 draft: false
 tags:
 - java
 - smart contract
 - solidity
-- xcall
+- ICON GMP (xCall)
 ---
 ## Introduction
 
-In the first part of this series about creating a cross chain voting dApp that interacts with xCall we went over the process of setting up the project and detailing the code logic in our Java and Solidity smart contracts.
+In the first part of this series about creating a cross chain voting dApp that interacts with ICON GMP (xCall) we went over the process of setting up the project and detailing the code logic in our Java and Solidity smart contracts.
 
-In this second part we will be deploying the smart contracts into their respective chains (Berlin testnet for the Java contract and Sepolia testnet for the solidity contract) and then we will interact with these contracts by casting a vote from the origin chain (Berlin) which will interact with xCall to send a cross chain message into the Sepolia testnet to our Solidity smart contract  to keep a tally of the votes on both chains.
+In this second part we will be deploying the smart contracts into their respective chains (Berlin testnet for the Java contract and Sepolia testnet for the solidity contract) and then we will interact with these contracts by casting a vote from the origin chain (Berlin) which will interact with ICON GMP (xCall) to send a cross chain message into the Sepolia testnet to our Solidity smart contract  to keep a tally of the votes on both chains.
 
 ## Deploying the smart contracts
 
@@ -60,7 +60,7 @@ async function deployEvm() {
 ```
 ### Deploying the Java contract on Berlin
 
-For the deployment of the ICON contract we use the ICON Javascript SDK to sign the deployment transaction and we provide the address of the xCall contract on the origin chain and the BTP address of the already deployed solidity contract on the destination chain as params.
+For the deployment of the ICON contract we use the ICON Javascript SDK to sign the deployment transaction and we provide the address of the ICON GMP (xCall) contract on the origin chain and the BTP address of the already deployed solidity contract on the destination chain as params.
 
 ```js
 /*
@@ -95,22 +95,22 @@ async function deployIconContract(params) {
 
 ## Interacting with the cross chain dApp
 
-To interact with xCall we need to first understand the cycle of a cross chain message using xCall.
+To interact with ICON GMP (xCall) we need to first understand the cycle of a cross chain message using ICON GMP (xCall).
 
-* Invoke `sendCallMessage` method of the xCall contract on the origin chain.
+* Invoke `sendCallMessage` method of the ICON GMP (xCall) contract on the origin chain.
 * Wait and fetch the `callMessageSent` event on the origin chain and the `CallMessage` event on the destination chain.
-* Invoke the `executeCall` method of the xCall contract on the destination chain.
+* Invoke the `executeCall` method of the ICON GMP (xCall) contract on the destination chain.
 * Wait and fetch the `CallExecuted` event on the destination chain.
 
 For the case of our cross chain voting dApp we first sign a transaction calling either the `voteYes()` or `voteNo()` method of our Java smart contract in the origin chain.
 
 These methods internally invoke the `_sendCallMessage(byte[] _data, @Optional byte[] _rollback)` method in the Java contract with an specific payload to cast a vote for "yes" or a vote for "no".
 
-The `_sendCallMessage(byte[] _data, @Optional byte[] _rollback)` method internally calls the `sendCallMessage` method of the xCall contract on the origin chain to initiate the cross chain message process.
+The `_sendCallMessage(byte[] _data, @Optional byte[] _rollback)` method internally calls the `sendCallMessage` method of the ICON GMP (xCall) contract on the origin chain to initiate the cross chain message process.
 
 After initiating the cross chain message process we procede to wait for the respective `CallMessageSent` and `CallMessage` events on the origin and destination chain which will notify us that the message has been received in the destination chain.
 
-To complete the cross chain message process we invoke the `executeCall` method of the xCall contract on the destination chain by signing a transaction with our wallet in the Sepolia network and finally we wait for the `CallExecuted` event to make sure that the process completed successfully.
+To complete the cross chain message process we invoke the `executeCall` method of the ICON GMP (xCall) contract on the destination chain by signing a transaction with our wallet in the Sepolia network and finally we wait for the `CallExecuted` event to make sure that the process completed successfully.
 
 To verify that the tally of the votes has been updated in the destination chain we call the `getVotes()` method of our deployed solidity contract which will return the tally of the votes and we can compare and verify that both chains have the same record of votes.
 
@@ -193,11 +193,11 @@ async function tests(contracts) {
 
 ## Conclusion
 
-In this second part of the tutorial we deployed the Java smart contract to the Berlin Testnet of ICON and the Solidity contract to the Sepolia testnet of Ethereum and we interacted with xCall by casting a vote on the origin chain and sending a cross chain message to the destination chain which then allowed us to have a copy of the votes on both chain.
+In this second part of the tutorial we deployed the Java smart contract to the Berlin Testnet of ICON and the Solidity contract to the Sepolia testnet of Ethereum and we interacted with ICON GMP (xCall) by casting a vote on the origin chain and sending a cross chain message to the destination chain which then allowed us to have a copy of the votes on both chain.
 
-By doing this we learned what xCall is and how it allows us as developers to have cross chain communication between different blockchains.
+By doing this we learned what ICON GMP (xCall) is and how it allows us as developers to have cross chain communication between different blockchains.
 
-We invite you to use xCall and give your projects cross chain capabilities and we are excited to see the great projects that xCall can make possible so that we can continue connecting chains in the blockchain space!.
+We invite you to use ICON GMP (xCall) and give your projects cross chain capabilities and we are excited to see the great projects that ICON GMP (xCall) can make possible so that we can continue connecting chains in the blockchain space!.
 
 ## Further Resources
 * Smart contracts in the official docs: https://docs.icon.community/icon-stack/smart-contracts

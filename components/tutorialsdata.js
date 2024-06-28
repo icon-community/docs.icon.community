@@ -8,22 +8,22 @@ import Tile from "./tile"
         href: "tutorials/commission-rate"
       },
       {
-        title: "xCall Tutorials Part 1",
+        title: "ICON GMP (xCall) Tutorials Part 1",
         description: "Creating a cross-chain voting dApp: Part 1.",
         href: "tutorials/2023-07-11-xcall-tutorials-creating-a-cross-chain-voting-dapp-part-1"
       },
       {
-        title: "xCall Tutorials Part 2",
+        title: "ICON GMP (xCall) Tutorials Part 2",
         description: "Creating a cross-chain voting dApp: Part 2.",
         href: "tutorials/2023-07-11-xcall-tutorials-creating-a-cross-chain-voting-dapp-part-2"
       },
       {
-        title: "xCall Tutorials Part 3",
+        title: "ICON GMP (xCall) Tutorials Part 3",
         description: "Creating a cross-chain voting dApp: Part 3.",
         href: "tutorials/2023-07-11-xcall-tutorials-creating-a-cross-chain-voting-dapp-part-3"
       },
       {
-        title: "xCall Tutorials Part 4",
+        title: "ICON GMP (xCall) Tutorials Part 4",
         description: "Creating a cross-chain voting dApp: Part 4.",
         href: "tutorials/2023-07-11-xcall-tutorials-creating-a-cross-chain-voting-dapp-part-4"
       },

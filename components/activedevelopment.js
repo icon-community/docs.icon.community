@@ -23,19 +23,19 @@ export const activeintegrations = [
 
 export const additionaldevelopment = [
     {
-        "name": "Wormhole xCall adaptor",
+        "name": "Wormhole GMP adaptor",
         "status": "mainnet",
-        "description": "xCall is not an interoperability solution, it is a messaging standard. The adaptors we have built make xCall compatible with Wormhole and Layerzero, which are interoperable protocols.",
+        "description": "GMP is not an interoperability solution, it is a messaging standard. The adaptors we have built make GMP compatible with Wormhole and Layerzero, which are interoperable protocols.",
         "notes": "Wormhole adaptors have been released on mainnet for Optimism, Base, Arbitrum, and Avalanche."
     },
     {
-        "name": "LayerZero xCall adaptor",
+        "name": "LayerZero GMP adaptor",
         "status": "mainnet",
-        "description": "xCall is not an interoperability solution, it is a messaging standard. The adaptors we have built make xCall compatible with Wormhole and Layerzero, which are interoperable protocols.",
+        "description": "GMP is not an interoperability solution, it is a messaging standard. The adaptors we have built make GMP compatible with Wormhole and Layerzero, which are interoperable protocols.",
         "notes": "Layerzero adaptors have been released for BSC, Optimism, Avalanche, Arbitrum, and Ethereum."
     },
     {
-        "name": "xCall v2.1",
+        "name": "GMP v2.1",
         "status": "audits",
         "description": "Ongoing work undergoing internal audit processes",
         "notes": "Includes ICON emission contracts related to the enshrinement of Balanced."

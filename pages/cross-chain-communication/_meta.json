@@ -1,6 +1,6 @@
 {
     "general-message-passing-xcall": {
-        "title": "General Message Passing (xCall)",
+        "title": "General Message Passing (GMP)",
         "theme": {
             "layout": "default",
             "breadcrumb": false

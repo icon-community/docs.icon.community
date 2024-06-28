@@ -18,10 +18,10 @@ const config: DocsThemeConfig = {
     const { title, frontMatter } = useConfig();
     const commonMetadata = {
       titleTemplate: "%s – ICON Documentation",
-      description: frontMatter.description || "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+      description: frontMatter.description || "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use cross-chain messaging standard and connections to secure bridging protocols.",
       openGraph: {
         title: "ICON Documentation",
-        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use cross-chain messaging standard and connections to secure bridging protocols.",
         url: `https://docs.icon.community${asPath}`,
         siteName: "ICON Documentation",
         images: [
@@ -44,7 +44,7 @@ const config: DocsThemeConfig = {
       twitter: {
         cardType: 'summary_large_image',
         site: '@helloiconworld',
-        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols.",
+        description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use cross-chain messaging standard and connections to secure bridging protocols.",
         title: "ICON Documentation",
         images: {
           url: "https://docs.icon.community/images/link-preview.jpg",
@@ -66,7 +66,7 @@ const config: DocsThemeConfig = {
         ...commonMetadata,
         title: "ICON Documentation",
         description:
-          "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use xCall messaging standard and connections to secure bridging protocols."
+          "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use cross-chain messaging standard and connections to secure bridging protocols."
       };
     }
   },

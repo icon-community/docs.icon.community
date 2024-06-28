@@ -1,15 +1,15 @@
 ---
-title: "xCall tutorial part 3: Integrating rollback functionality in the cross chain voting dApp."
+title: "ICON GMP (xCall) tutorial part 3: Integrating rollback functionality in the cross chain voting dApp."
 date: 2023-07-24
 author: espanicon
 slug: x-call-tutorial-part-3-integrating-rollback-functionality
-description: xcall tutorial part 3, integrating rollback into the cross chain voting dApp.
+description: ICON GMP (xCall) tutorial part 3, integrating rollback into the cross chain voting dApp.
 draft: false
 tags:
 - java
 - smart contract
 - solidity
-- xcall
+- ICON GMP (xCall)
 ---
 ## Introduction
 
@@ -29,7 +29,7 @@ To showcase the rollback functionality we are going to add a cap to the amount o
 
 * User casts a vote in the origin chain either using the `voteYes()` or `voteNo()` method.
 * Tally of votes in the origin chain is updated, it increases by one for `countOfYes` variable if the `voteYes()` method is called or it increases the `countOfNo` variable if the `voteNo()` method is called.
-* The dApp contract in the origin chain invokes the `sendCallMessage` method of the xCall contract in the origin chain, the rollback param will either be a byte representation of the string `voteYesRollback` or the string `voteNoRollback` to identify the type of vote that was cast.
+* The dApp contract in the origin chain invokes the `sendCallMessage` method of the ICON GMP (xCall) contract in the origin chain, the rollback param will either be a byte representation of the string `voteYesRollback` or the string `voteNoRollback` to identify the type of vote that was cast.
 * The destination chain receives the message, if the total vote cap has been reached it triggers a `revert` and executes a rollback, if the total vote cap has not been reached it updates the interal tally of the votes.
 
 The following is the updated Java smart contract:
@@ -264,7 +264,7 @@ contract VotingDapp {
 
   /**
      @notice Handles the call message received from the source chain.
-     @dev Only calleable from the callSvc which is the xCall contract.
+     @dev Only calleable from the callSvc which is the ICON GMP (xCall) contract.
      @param _from The BTP address of the caller on the source chain
      @param _data The calldata delivered from the caller
    */
@@ -478,9 +478,9 @@ main();
 
 ## Conclusion
 
-In this third tutorial of the xCall series about creating a cross chain voting dApp we refactored the Java and Solidity smart contracts to implement a rollback scenario by creating a limit in the amount of votes that can be cast.
+In this third tutorial of the ICON GMP (xCall) series about creating a cross chain voting dApp we refactored the Java and Solidity smart contracts to implement a rollback scenario by creating a limit in the amount of votes that can be cast.
 
-Once the limit is reached a `revert` is raised in the dApp contract on the destination chain which triggers the rollback on the xCall contract.
+Once the limit is reached a `revert` is raised in the dApp contract on the destination chain which triggers the rollback on the ICON GMP (xCall) contract.
 
 In the next tutorial we will explain unit testing for the Java and Solidity smart contracts.
 

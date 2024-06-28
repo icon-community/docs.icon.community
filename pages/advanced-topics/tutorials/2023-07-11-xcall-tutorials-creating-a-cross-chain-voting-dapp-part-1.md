@@ -1,19 +1,19 @@
 ---
-title: "xCall tutorial part 1: Creating a cross chain voting dapp."
+title: "ICON GMP (xCall) tutorial part 1: Creating a cross chain voting dapp."
 date: 2023-07-11
 author: espanicon
 slug: x-call-tutorial-part-1-creating-a-cross-chain-voting-dapp
-description: xcall tutorial part 1, creating a cross chain voting dapp. Developing the smart contracts
+description: ICON GMP (xCall) tutorial part 1, creating a cross chain voting dapp. Developing the smart contracts
 draft: false
 tags:
 - java
 - smart contract
 - solidity
-- xcall
+- ICON GMP (xCall)
 ---
 ## Introduction
 
-xCall is a standard interface to make permission-less calls between different blockchain networks. Each network that ICON is interoperable with has an xCall contract address that dApps can call to transfer data across chains.
+ICON GMP (xCall) is a standard interface to make permission-less calls between different blockchain networks. Each network that ICON is interoperable with has an ICON GMP (xCall) contract address that dApps can call to transfer data across chains.
 
 In this tutorial we are going to create a cross chain voting dapp which is comprised of:
  * A smart contract on the source chain (ICON) written in Java.
@@ -21,12 +21,12 @@ In this tutorial we are going to create a cross chain voting dapp which is compr
  * A nodejs script that will deploy the contracts and interact with them via RPC calls.
 
 
-The crosschain voting dApp we are creating for this tutorial allows users (wallets on the origin chain) to cast a simple vote of 'yes' or 'no' by calling one of two methods named 'voteYes' and 'voteNo' on the contract thats deployed on the origin chain, this will trigger a crosschain message using xCall that will send the votes to the destination chain and we will keep a ledger of the votes that has been casted on both chains.
+The crosschain voting dApp we are creating for this tutorial allows users (wallets on the origin chain) to cast a simple vote of 'yes' or 'no' by calling one of two methods named 'voteYes' and 'voteNo' on the contract thats deployed on the origin chain, this will trigger a crosschain message using ICON GMP (xCall) that will send the votes to the destination chain and we will keep a ledger of the votes that has been casted on both chains.
 
 The entire code for this tutorial (java contract, solidity contract and js scripts) can be found in the following repo:
 * https://github.com/icon-community/crosschain-voting-dapp
 
-The folder structure of the project is shown in the following section. The project has a `contracts` folder which inside has a `jvm` and a `solidity` folder which hosts the Java and Solidity contracts and at the root of the project we have the main file `index.js` which hosts the logic to interact with the contracts and the xCall interface.
+The folder structure of the project is shown in the following section. The project has a `contracts` folder which inside has a `jvm` and a `solidity` folder which hosts the Java and Solidity contracts and at the root of the project we have the main file `index.js` which hosts the logic to interact with the contracts and the ICON GMP (xCall) interface.
 
 ```bash
 tree -I 'node_modules|build|local|test|bin|gradle'
@@ -77,13 +77,13 @@ The implementation of the smart contract will have two public (payable) methods 
 
 These methods will internally call the private method `_sendCallMessage(byte[] _data, @Optional byte[] _rollback)`.
 
-The `_sendCallMessage` method in our Java contract will invoke the `sendCallMessage` method of the xCall contract on the origin chain to initiate the crosschain transfer.
+The `_sendCallMessage` method in our Java contract will invoke the `sendCallMessage` method of the ICON GMP (xCall) contract on the origin chain to initiate the crosschain transfer.
 
 An internal tally of the votes that has been casted will be saved in two variables (BigInteger) that are named `countOfYes` and `countOfNo` and are initiated with a value of zero at the moment of deployment.
 
 The contract will have a `readonly` method called `getVotes()` that will return the current state of the votes which should be the same both on the destination and origin chains.
 
-During the deployment of this contract we are going to provide the address of the xcall contract on the origin chain and the btp address of the solidity contract on the destination chain which should be deployed first.
+During the deployment of this contract we are going to provide the address of the ICON GMP (xCall) contract on the origin chain and the btp address of the solidity contract on the destination chain which should be deployed first.
 
 
 The following is the entire contract written in Java, the code can be found in the `./contracts/jvm/VotingDapp/src/main/java/app/VotingDapp.java` file.
@@ -195,11 +195,11 @@ cd contracts/jvm
 
 The smart contract on the destination chain is written in solidity and will be deployed in the Sepolia testnet for Ethereum. The source file for the contract can be found in the `./contracts/solidity/contracts/VotingDapp.sol` file.
 
-The implementation of this smart contracts is comprised of a `struct` variable named `Votes` that will have two `BigInteger` params named `countOfYes` and `countOfNo` that will serve as counters for the amount of "yes" and "no" votes and a variable of type `Address` named `callSvc` that will be setup to the contract address of the xCall contract on Sepolia, this will ensure that only the xCall contract is allowed to modify the tally of votes. These variables are initiated in the constructor, the vote counters start with a value of zero and the `callSvc` variable is setup during deployment.
+The implementation of this smart contracts is comprised of a `struct` variable named `Votes` that will have two `BigInteger` params named `countOfYes` and `countOfNo` that will serve as counters for the amount of "yes" and "no" votes and a variable of type `Address` named `callSvc` that will be setup to the contract address of the ICON GMP (xCall) contract on Sepolia, this will ensure that only the ICON GMP (xCall) contract is allowed to modify the tally of votes. These variables are initiated in the constructor, the vote counters start with a value of zero and the `callSvc` variable is setup during deployment.
 
 We have a public function called `getVotes()` that returns the current state of the votes and two internal functions named `addYesVote()` and `addNoVote()` that are called by the `handleCallMessage(string calldata _from, bytes calldata _data)` method of our solidity contract.
 
-The `handleCallMessage` method is a requirement to interact with xCall, once a message is received on the destination chain it is required by the user to sign a transaction calling the `executeCall` method of the xCall contract to initiate the last step of a cross chain message with xCall, this transaction will allow the xCall contract  to pass onto our solidity contract the cross chain message and we then handle the logic in our solidity contract in the destination chain, in our specific case, depending on the payload (the message being send) we either increase the votes in the tally for "yes" or the "no" votes.
+The `handleCallMessage` method is a requirement to interact with ICON GMP (xCall), once a message is received on the destination chain it is required by the user to sign a transaction calling the `executeCall` method of the ICON GMP (xCall) contract to initiate the last step of a cross chain message with ICON GMP (xCall), this transaction will allow the ICON GMP (xCall) contract  to pass onto our solidity contract the cross chain message and we then handle the logic in our solidity contract in the destination chain, in our specific case, depending on the payload (the message being send) we either increase the votes in the tally for "yes" or the "no" votes.
 
 
 The following is the entire contract written in Solidity, the code can be found in the `./contracts/solidity/contracts/VotingDapp.sol` file.
@@ -315,7 +315,7 @@ The compiled Solidity contract can be found in the `./contracts/solidity/build/`
 
 ## Conclusion
 
-In this first part of this tutorial serie we went over the introduction of the sample cross chain voting dapp that interacts with xCall, explained the Java and Solidity smarts contracts that will be deployed  to the Berlin testnet and Sepolia testnet for ICON and Ethereum.
+In this first part of this tutorial serie we went over the introduction of the sample cross chain voting dapp that interacts with ICON GMP (xCall), explained the Java and Solidity smarts contracts that will be deployed  to the Berlin testnet and Sepolia testnet for ICON and Ethereum.
 
 We will continue in the next tutorial with the process for deployments of these smarts contracts in their specific chains and how to interact with them once they have been deployed.
 

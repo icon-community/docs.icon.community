@@ -1,19 +1,19 @@
 ---
-title: "xCall tutorial part 4: Adding Unit testing to the smart contracts."
+title: "ICON GMP (xCall) tutorial part 4: Adding Unit testing to the smart contracts."
 date: 2023-07-24
 author: espanicon
 slug: x-call-tutorial-part-4-adding-unit-testing
-description: xcall tutorial part 4, adding unit testing to the smart contracts
+description: ICON GMP (xCall) tutorial part 4, adding unit testing to the smart contracts
 draft: false
 tags:
 - java
 - smart contract
 - solidity
-- xcall
+- ICON GMP (xCall)
 ---
 ## Introduction
 
-Unit tests are very helpful in the development process, so In this last part of the xCall tutorial series we are going to be creating unit tests for both our Java and Solidity contracts.
+Unit tests are very helpful in the development process, so In this last part of the ICON GMP (xCall) tutorial series we are going to be creating unit tests for both our Java and Solidity contracts.
 
 ## Running Unit Tests for the Java Contract
 
@@ -204,9 +204,9 @@ contract("VotingDapp", accounts => {
 
 ## Conclusion
 
-In this tutorial we finish up the xCall series setting up the unit tests for the Java and Solidity contracts.
+In this tutorial we finish up the ICON GMP (xCall) series setting up the unit tests for the Java and Solidity contracts.
 
-We invite you to use xCall and give your projects cross chain capabilities, if you need help or want to join our developer community you can visit the [Discord Channels for the ICON Project](https://icon.community/icondiscord/).
+We invite you to use ICON GMP (xCall) and give your projects cross chain capabilities, if you need help or want to join our developer community you can visit the [Discord Channels for the ICON Project](https://icon.community/icondiscord/).
 
 ## Further Resources
 * Smart contracts in the official docs: https://docs.icon.community/icon-stack/smart-contracts
