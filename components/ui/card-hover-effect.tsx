@@ -53,7 +53,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <div className=""><Image className="invert-0 dark:invert grayscale-0 dark:grayscale" src={item.logo} alt={item.title} height={100} width={200}/></div>
-            <CardTitle>{item.year}</CardTitle>
+            <CardTitle>Audited: {item.year}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </Link>
