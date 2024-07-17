@@ -40,5 +40,12 @@
       "layout": "default",
       "breadcrumb": false
     }
+  },
+  "audits-and-security": {
+    "title": "Audits & Security",
+    "theme": {
+      "layout": "default",
+      "breadcrumb": false
+    }
   }
 }

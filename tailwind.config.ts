@@ -27,6 +27,9 @@ module.exports = {
       black: 900,
     },
     extend: {
+      filter: {
+        'black-image': 'brightness(0) invert(1)',
+      },
       colors: {
         'xteal': '#00B8CC',
         'light': '#8896AB',
