@@ -2,8 +2,8 @@
 
 Registering and running a validator node requires a few steps to be followed.
 
-* Create a wallet for the validator and register it on the chain as a validator by paying the registration fee.
 * Setup the node and wait for it to fully sync up. This node will be setup with a node wallet (not the same as validator wallet for security reasons) that will be used to sign blocks and consensus.
+* Create a wallet for the validator and register it on the chain as a validator by paying the registration fee.
 * Register the node with the validator public key on the chain by calling `setPRepNodePublicKey` method.
 
 This guide will help you set up a validator node using Docker.
@@ -31,99 +31,11 @@ TCP 7100: TCP port used for peer-to-peer connection between peer nodes.
 TCP 9000: JSON-RPC or RESTful API port serving application requests.P-Rep must allow TCP connections to port 7100 and 9000 of an external host. ( Use 0.0.0.0/0 for a source from any network )
 ```
 
-## Creating a wallet for the validator
+## Creating a wallet for the validator and the node
 
 The first step is to create a wallet and keystore file. You can follow the instructions in this [guide](./how-to-create-a-wallet-account.mdx) to create a wallet.
 
-This wallet needs to be funded with enough ICX to be able to register as a validator, the registration fee is 2,000 ICX and you will also need a small amount of ICX to pay for the transaction fees.
-
-## Registering a validator on chain
-
-
-### Registering a validator node by calling the registerPrep function
-
-Once the wallet is funded you can register as a validator node using the [registerPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#registerprep) function from the JSON-RPC API.
-
-This can be done directly from the tracker, using goloop or calling the RPC method directly.
-
-#### Using the tracker
-
-The easiest way to sign this transaction is to load up the keystore in a browser wallet ([Hana Wallet](https://hanawallet.io/)) and sign the transaction directly from the tracker by login in first with your wallet and then going to the contract page and calling the `registerPrep` function.
-
-https://tracker.icon.community/contract/cx0000000000000000000000000000000000000000#contract
-
-![registerPrep](/images/registering-validator-with-tracker.png)
-
-#### Using goloop cli or preptools
-
-Goloop CLI and the preptools are 2 command line utilities that can be used to interact with the ICON blockchain.
-
-These can be used to sign the transaction and call the `registerPrep` function.
-
-https://github.com/icon-project/goloop/blob/master/doc/goloop_cli.md#goloop-rpc-sendtx-call
-
-https://github.com/icon-project/preptools/blob/master/README.md#registerprep
-
-#### Using the JSON-RPC API
-
-Calling the method from the JSON-RPC API directly requires sending a signed transaction with the following parameters:
-
-> Request
-
-```javascript
-{
-  "jsonrpc": "2.0",
-  "id": 1234,
-  "method": "icx_sendTransaction",
-  "params": {
-    "value": "0x6c6b935b8bbd400000",
-    "data": {
-      "method": "registerPRep",
-      "params": {
-        "name": "ABC Node",
-        "country": "KOR",
-        "city": "Seoul",
-        "email": "abc@example.com",
-        "website": "https://abc.example.com/",
-        "details": "https://abc.example.com/details/",
-        "p2pEndpoint": "abc.example.com:7100",
-        "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
-      }
-    },
-    ...
-  }
-}
-```
-
-#### Parameters
-
-| Key | VALUE Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | T\_STRING | true | P-Rep name "ABC Node" |
-| email | T\_STRING | true | P-Rep email "abc@example.com" |
-| country | T\_STRING | true | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) "KOR", "USA", "CHN" |
-| city | T\_STRING | true | "Seoul", "New York", "Paris" |
-| website | T\_STRING | true | P-Rep homepage url "[https://abc.example.com](https://abc.example.com)" |
-| detailes | T\_STRING | true | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
-| p2pEndpoint | T\_STRING | true | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
-| nodeAddress | T\_STRING | False | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
-
-
-The following guide explains how to interact with the ICON JSON-RPC API: [ICON JSON-RPC API](./how-to-use-the-json-rpc-api.mdx)
-
-### Node Grades
-
-Node grades are another term for node levels.
-
-After successfully registering as a validator node using [registerPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#registerprep) the grade of the node will be set to "0x2".
-
-There are 3 node grades, detailed below. You can also check the `grade` return parameter from [getPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#getprep) function from the JSON-RPC API for more info
-
-| Grade number | Usage               | Description                                                                                               |
-| ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- |
-| 0x2          | Validator Candidate | Register your node as a candidate to become a block validator and network governance delegate             |
-| 0x1          | Sub-Validator       | Register your node as a sub-validator for block production and validation and network governance delegate |
-| 0x0          | Main Validator      | Register your node as a validator for block production and validation and network governance delegate     |
+This wallet you define as the one to manage the validator, needs to be funded with enough ICX to be able to register as a validator, the registration fee is 2,000 ICX and you will also need a small amount of ICX to pay for the transaction fees.
 
 ## Setting up the node
 
@@ -256,6 +168,151 @@ The following folder structure will be created:
 | CHECK\_STACK\_LIMIT  | 360                     | int  | false    | count - count- Restart container when stack value is reached                     |
 | GOLOOP\_LOG\_LEVEL   | debug                   | str  | false    | Log Level - (trace,debug,info,warn,error,fatal,panic                             |
 | LOG\_OUTPUT\_TYPE    | file                    | str  | false    | sec - check interval for monitoring                                              |
+
+## Registering a validator on chain
+
+### Registering a validator node by calling the registerPrep function
+
+Once the wallet is funded you can register as a validator node using the [registerPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#registerprep) function from the JSON-RPC API.
+
+This can be done directly from the tracker, using goloop or calling the RPC method directly.
+
+#### Using the tracker
+
+The easiest way to sign this transaction is to load up the keystore in a browser wallet ([Hana Wallet](https://hanawallet.io/)) and sign the transaction directly from the tracker by login in first with your wallet and then going to the contract page and calling the `registerPrep` function.
+
+https://tracker.icon.community/contract/cx0000000000000000000000000000000000000000#contract
+
+![registerPrep](/images/registering-validator-with-tracker.png)
+
+#### Using goloop cli or preptools
+
+Goloop CLI and the preptools are 2 command line utilities that can be used to interact with the ICON blockchain.
+
+These can be used to sign the transaction and call the `registerPrep` function.
+
+https://github.com/icon-project/goloop/blob/master/doc/goloop_cli.md#goloop-rpc-sendtx-call
+
+https://github.com/icon-project/preptools/blob/master/README.md#registerprep
+
+The docker container for the node has goloop CLI installed internally, if you dont want to install goloop CLI in your system you can run the following command to call the `registerPRep` method inside the docker container:
+
+```bash
+docker exec -it icon2-node goloop rpc sendtx call --to cx0000000000000000000000000000000000000000 --method registerPRep --param city=seoul --param country=KOR --param details=https://yourdomain.com/path/to/logo256.png --param email=test@mail.com --param name=testPRep --param nodeAddress=hx123...4566 --param p2pEndpoint=127.0.0.1:9000 --param website=https://yourdomain.com/path/to/logo256.png --key_store config/keystore.json --key_password "KEYSTORE_PASSWORD" --uri https://ctz.solidwallet.io/api/v3 --nid 1 --value 0x6c6b935b8bbd400000 --step_limit 0x30000
+```
+
+The following is an example using `preptools`:
+```bash
+(venv) $ cat registerPRep.json
+{
+    "name": "banana node",
+    "country": "USA",
+    "city": "New York",
+    "email": "banana@example.com",
+    "website": "https://icon.banana.com",
+    "details": "https://icon.banana.com/json",
+    "p2pEndpoint": "node.example.com:7100",
+    "nodeAddress": "hxef73db5d0ad02eb1fadb37d0041be96bfa56d4e6"
+}
+
+(venv) $ preptools registerPRep -k test_keystore --prep-json registerPRep.json
+> Password:
+[Request] ======================================================================
+{
+    "from_": "hxef73db5d0ad02eb1fadb37d0041be96bfa56d4e6",
+    "to": "cx0000000000000000000000000000000000000000",
+    "value": 2000000000000000000000,
+    "step_limit": 268435456,
+    "nid": 3,
+    "nonce": null,
+    "version": 3,
+    "timestamp": null,
+    "method": "registerPRep",
+    "data_type": "call",
+    "params": {
+        "name": "banana node",
+        "country": "USA",
+        "city": "New York",
+        "email": "banana@example.com",
+        "website": "https://icon.banana.com",
+        "details": "https://icon.banana.com/json",
+        "p2pEndpoint": "node.example.com:7100",
+        "nodeAddress": "hxef73db5d0ad02eb1fadb37d0041be96bfa56d400"
+    }
+}
+
+> Continue? [Y/n]
+request success.
+[Response] =====================================================================
+{
+    "jsonrpc": "2.0",
+    "result": "0xe667b8de967e4c5e2cc5f4fc2775766f87517935e0875a8c4d0b9c8c2ce01846",
+    "id": 1234
+}
+
+```
+
+#### Using the JSON-RPC API
+
+Calling the method from the JSON-RPC API directly requires sending a signed transaction with the following parameters:
+
+> Request
+
+```javascript
+{
+  "jsonrpc": "2.0",
+  "id": 1234,
+  "method": "icx_sendTransaction",
+  "params": {
+    "value": "0x6c6b935b8bbd400000",
+    "data": {
+      "method": "registerPRep",
+      "params": {
+        "name": "ABC Node",
+        "country": "KOR",
+        "city": "Seoul",
+        "email": "abc@example.com",
+        "website": "https://abc.example.com/",
+        "details": "https://abc.example.com/details/",
+        "p2pEndpoint": "abc.example.com:7100",
+        "nodeAddress": "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb"
+      }
+    },
+    ...
+  }
+}
+```
+
+#### Parameters
+
+| Key | VALUE Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| name | T\_STRING | true | P-Rep name "ABC Node" |
+| email | T\_STRING | true | P-Rep email "abc@example.com" |
+| country | T\_STRING | true | [ISO 3166-1 ALPHA-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) "KOR", "USA", "CHN" |
+| city | T\_STRING | true | "Seoul", "New York", "Paris" |
+| website | T\_STRING | true | P-Rep homepage url "[https://abc.example.com](https://abc.example.com)" |
+| detailes | T\_STRING | true | Url including P-Rep detail information "[https://abc.example.com/details/](https://abc.example.com/details/)" |
+| p2pEndpoint | T\_STRING | true | Network info used for connecting among P-Rep nodes "123.45.67.89:7100", "node.example.com:7100" |
+| nodeAddress | T\_STRING | False | Node Key for only consensus "hxe7af5fcfd8dfc67530a01a0e403882687528dfcb" |
+
+
+The following guide explains how to interact with the ICON JSON-RPC API: [ICON JSON-RPC API](./how-to-use-the-json-rpc-api.mdx)
+
+### Node Grades
+
+Node grades are another term for node levels.
+
+After successfully registering as a validator node using [registerPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#registerprep) the grade of the node will be set to "0x2".
+
+There are 3 node grades, detailed below. You can also check the `grade` return parameter from [getPrep](https://github.com/icon-project/goloop/blob/master/doc/icon_chainscore_api.md#getprep) function from the JSON-RPC API for more info
+
+| Grade number | Usage               | Description                                                                                               |
+| ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0x2          | Validator Candidate | Register your node as a candidate to become a block validator and network governance delegate             |
+| 0x1          | Sub-Validator       | Register your node as a sub-validator for block production and validation and network governance delegate |
+| 0x0          | Main Validator      | Register your node as a validator for block production and validation and network governance delegate     |
+
 
 ## Registering a validator node public key
 
