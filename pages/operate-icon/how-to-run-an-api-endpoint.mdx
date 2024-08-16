@@ -1,12 +1,18 @@
 # How to run an API Endpoint
 
-### Prerequisites
+Running an API Endpoint is a similar process as setting up a validator node.
 
-Install [Docker](https://www.docker.com/get-started/)
+The only differences are the `ROLE` environment variable. The `ROLE` environment variable should be set to `0` for an API Endpoint.
 
-Install [Docker Engine](https://docs.docker.com/engine/install/)
+We also dont need to register a wallet as a validator and pay registration fee.
 
-Install [docker-compose](https://github.com/docker/compose) as well if it is not installed with Docker by default
+## Prerequisites
+
+* Install [Docker](https://www.docker.com/get-started/)
+
+* Install [Docker Engine](https://docs.docker.com/engine/install/)
+
+* Install [docker-compose](https://github.com/docker/compose) as well if it is not installed with Docker by default
 
 Get the official Docker Image: `iconloop/icon2-node`
 
@@ -15,7 +21,7 @@ System Requirements
 
 CPU:  minimum 4core, recommend 8core +
 RAM:  minimum 16GB, recommend 32GB +
-DISK : minimum SSD 1.5TB, recommend SSD 2TB +
+DISK : minimum SSD 2.5TB, recommend SSD 3TB +
 Network: minimum 1Gbps, recommend 2Gbps +
 
 External Communications
@@ -23,7 +29,27 @@ TCP 7100: TCP port used for peer-to-peer connection between peer nodes.
 TCP 9000: JSON-RPC or RESTful API port serving application requests.P-Rep must allow TCP connections to port 7100 and 9000 of an external host. ( Use 0.0.0.0/0 for a source from any network )
 ```
 
-### Getting started
+## Getting started
+
+Create a working folder in your server on a disk with enough space as detailed in the system requirements.
+
+For this guide we will use the following structure:
+
+```
+mkdir ~/icon-api-endpoint
+```
+
+Change to the working directory
+
+```
+cd ~/icon-api-endpoint
+```
+
+Create a `docker-compose.yml` file in the working directory.
+
+```
+touch docker-compose.yml
+```
 
 Open docker-compose.yml in a text editor and add the following content:
 
@@ -38,14 +64,11 @@ services:
       environment:
          SERVICE: "MainNet"  # MainNet, SejongNet  ## network type
          GOLOOP_LOG_LEVEL: "debug" # trace, debug, info, warn, error, fatal, panic
-         KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # e.g. keystore.json read a config/keystore.json
-         # e.g. "/goloop/config/keystore.json" read a "config/keystore.json" of host machine
-         KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD"
+         KEY_STORE_FILENAME: "INPUT_YOUR_KEY_STORE_FILENAME" # optional, a wallet will be generated for you if you don't have one
+         KEY_PASSWORD: "INPUT_YOUR_KEY_PASSWORD" # optional, a wallet will be generated for you if you don't have one
          FASTEST_START: "true"    # It can be restored from latest Snapshot DB.
-         # You must enter your ICON1 node address. Recent blocks that are not in the backup DB are synchronized from your ICON1 node.
-         MIG_ENDPOINT: "http://YOUR_ICON1_SERVER_IPADDR:9000"
 
-         ROLE: 3 # Validator = 3, API Endpoint = 0
+         ROLE: 0 # Validator = 3, API Endpoint = 0
 
       cap_add:
          - SYS_TIME
@@ -56,7 +79,7 @@ services:
          - ./logs:/goloop/logs
 ```
 
-Start up
+Run the following command to start the ICON2 node and wait for the entire ledger to locally sync.
 
 ```
 $ docker-compose pull && docker-compose up -d
@@ -70,13 +93,13 @@ $ tail -f logs/booting.log
 $ tail -f logs/goloop.log
 ```
 
-The directories(data, config, icon, logs …) are created by docker engine, but config directory needs to importing your keystore file.
+The following folder structure will be created:
 
 ```
 .
 ├── docker-compose.yml
-├── config               # configuration files
-│   └── keystore.json   # Import the your keystore file
+├── config              # configuration files
+│   └── keystore.json   # Import your keystore file
 
 ├── data                # block data
 │   ├── 1
@@ -85,8 +108,6 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
 │   ├── ee.sock
 │   └── rconfig.json
 
-├── icon   # icon1 data for migrate. If a migration is completed, it will be auto-remove
-│   └── migrator_bm
 └── logs   # log files
     ├── booting.log
     ├── health.log    # health state log
@@ -96,7 +117,7 @@ The directories(data, config, icon, logs …) are created by docker engine, but 
     └── goloop.log   # goloop's log file
 ```
 
-### Docker environments settings
+## Docker environments settings
 
 | Name                 | default                 | type | required | description                                                                      |
 | -------------------- | ----------------------- | ---- | -------- | -------------------------------------------------------------------------------- |
