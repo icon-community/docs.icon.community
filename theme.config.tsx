@@ -43,7 +43,7 @@ const config: DocsThemeConfig = {
       },
       twitter: {
         cardType: 'summary_large_image',
-        site: '@helloiconworld',
+        site: '@poweredbyicx',
         description: "ICON's Cross-Chain Framework simplifies cross-chain development with its easy-to-use cross-chain messaging standard and connections to secure bridging protocols.",
         title: "ICON Documentation",
         images: {
@@ -196,7 +196,7 @@ const config: DocsThemeConfig = {
         <div className="flex flex-col px-2">
           <h3 className="font-bold">Community</h3>
           <Link className='text-sm'  href="https://icon.community/icondiscord/">Discord</Link>
-          <Link  className='text-sm' href="https://twitter.com/helloiconworld">X (Twitter)</Link>
+          <Link  className='text-sm' href="https://twitter.com/poweredbyicx">X (Twitter)</Link>
           <Link  className='text-sm' href="https://coinmarketcap.com/community/profile/ICONNetwork">CoinMarketCap</Link>
           <p className="text-sm opacity-100">-</p>
           <p className='text-sm' >© ICON Foundation 2024</p>

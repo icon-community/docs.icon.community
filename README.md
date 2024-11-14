@@ -1,7 +1,7 @@
 <img src="/public/images/icon-documentation-over-white.svg" width="400">
 
 [![Discord](https://img.shields.io/discord/880651922682560582?logo=discord)](https://discord.gg/b5QvCXJjJM)
-[![Twitter Follow](https://img.shields.io/twitter/follow/helloiconworld?style=social)](https://twitter.com/helloiconworld)
+[![Twitter Follow](https://img.shields.io/twitter/follow/poweredbyicx?style=social)](https://twitter.com/poweredbyicx)
 [![Website](https://img.shields.io/badge/Website-docs.icon.community-blue)](https://www.docs.icon.community)
 
 [![Issues](https://img.shields.io/github/issues/icon-community/docs.icon.community)](https://github.com/icon-community/docs.icon.community/issues)
