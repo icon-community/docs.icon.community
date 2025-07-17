@@ -18,8 +18,20 @@ const chainDetailsMapping = {
   optimism: { displayName: "Optimism", imageName: "Optimism.svg" },
 };
 
+type ChainMessage = {
+  src: string[];
+  dest: string[];
+};
+
+type NetworkMessages = {
+  [chain: string]: ChainMessage;
+};
+
 export function Topbar() {
-  const { networkMessages, loading } = useData();
+  const { networkMessages, loading } = useData() as {
+    networkMessages: NetworkMessages;
+    loading: boolean;
+  };
   const [chainmessages, setChainMessages] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
