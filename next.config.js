@@ -23,8 +23,8 @@ module.exports = withNextra({
       // Add other rewrites here if needed
     ];
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
+  webpack: (config, { isServer, dev }) => {
+    if (isServer && !dev) {
       require("./scripts/generate-sitemap");
     }
     return config;
