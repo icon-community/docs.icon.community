@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import sodaxLogo from "../public/sodax-logo.png";
 
 const MODAL_DISMISSED_KEY = "sodax_rebrand_modal_dismissed_v1";
 const BANNER_DISMISSED_KEY = "sodax_rebrand_banner_dismissed_v1";
@@ -53,12 +55,13 @@ export function SodaxAnnouncement() {
         >
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
             <div className="flex-1 flex items-center gap-3">
-              <img
-                src="/sodax-logo.png"
+              <Image
+                src={sodaxLogo}
                 alt="SODAX"
                 width={20}
                 height={20}
                 className="shrink-0"
+                unoptimized
               />
               <p>
                 You are viewing the legacy ICON documentation. ICON is now SODAX, infrastructure for modern money live across 18+ networks.{" "}
@@ -119,12 +122,13 @@ export function SodaxAnnouncement() {
               ×
             </button>
             <div className="p-8 pt-10" style={{ color: ESPRESSO }}>
-              <img
-                src="/sodax-logo.png"
+              <Image
+                src={sodaxLogo}
                 alt="SODAX"
                 width={56}
                 height={56}
                 className="mb-6"
+                unoptimized
               />
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-3"
